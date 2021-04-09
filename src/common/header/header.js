@@ -16,8 +16,6 @@ const useStyles = makeStyles((theme) => ({
 }));
 class Header extends Component {
   render() {
-    const { classes } = this.props;
-
     return (
       <div className="header-container">
         <div className="container-item logo">Image Viewer</div>

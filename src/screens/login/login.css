@@ -1,0 +1,23 @@
+.login-container{
+    display: flex;
+    justify-content: center;
+}
+.login-item{
+    padding: 50px;
+    width:400px;
+    margin-top: 10px;
+}
+.login-field{
+    width: 100%;
+}
+.login-btn{
+    padding-top: 40px;
+
+}
+@media (max-width: 700px) {
+    .login-item{
+        padding: 20px;
+        width:350px;
+        margin-top: 10px;
+    }
+  }
