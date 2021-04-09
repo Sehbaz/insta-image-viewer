@@ -12,7 +12,15 @@
 }
 .login-btn{
     padding-top: 40px;
-
+}
+.red{
+    color:red;
+}
+.dispNone{
+    display: none;
+}
+.dispBlock{
+    display: block;
 }
 @media (max-width: 700px) {
     .login-item{
