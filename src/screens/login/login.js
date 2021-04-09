@@ -18,6 +18,7 @@ class Login extends Component {
       usernameRequired: "dispNone",
       password: "",
       passwordRequired: "dispNone",
+      validUser: "dispNone",
     };
   }
   loginHandler = () => {
@@ -30,6 +31,25 @@ class Login extends Component {
       this.setState({ passwordRequired: "dispBlock" });
     } else {
       this.setState({ passwordRequired: "dispNone" });
+    }
+    let correctUsername = "admin";
+    let correctPassword = "admin";
+    if (
+      this.state.username === correctUsername &&
+      this.state.password === correctPassword
+    ) {
+      sessionStorage.setItem(
+        "access-token",
+        "IGQVJWajdlY19ZAUGttRk5sLWFIT1k0U0FTb1NzUmFsN0RqakdOeVpJdUVOZAW1oVWNVUDByMldMWmFUR3NvT2RxVnVFSDdGN0lfVHRVM0NNb2hOdkdRRmlYOUNoNld5U29EaGlleWhfakFTQ1o1OWN3Y3BVMVVrUWZAiNFdz"
+      );
+      this.setState({ validUser: "dispNone" });
+      console.log("Correct credetntials");
+      // ReactDOM.render(<Home />, document.getElementById("root"));
+    } else {
+      this.state.username !== "" && this.state.password !== ""
+        ? this.setState({ validUser: "dispBlock" })
+        : this.setState({ validUser: "dispNone" });
+      console.log("INcorrect credetntials");
     }
   };
   inputUsernameChangeHandler = (e) => {
@@ -74,7 +94,11 @@ class Login extends Component {
                   <span className="red">Required</span>
                 </FormHelperText>
               </FormControl>
-
+              <br />
+              <br />
+              <FormHelperText className={this.state.validUser}>
+                <span className="red">Incorrect username and/or password</span>
+              </FormHelperText>
               <div className="login-btn">
                 <Button
                   variant="contained"
