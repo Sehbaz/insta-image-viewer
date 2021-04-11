@@ -12,12 +12,32 @@
     color: #fff;
     font-size: 18px;
 }
-
+.home-search{
+    display: flex;
+}
+/* Style the search box inside the navigation bar */
+.home-search input[type=text] {
+    float: right;
+    padding: 6px;
+    border: none;
+    border-radius: 4px;
+    margin-right: 16px;
+    font-size: 17px;
+    width:300px;
+    background-color: #c0c0c0;
+    color:black;
+  }
+  .home-search input:focus {
+    outline:none;
+  }
 @media (max-width: 700px) {
     .header-container {
         max-height: 50px;
     }
     .container-item{
         padding: 0px 20px;
+    }
+    .home-search input[type=text] {
+        width: 130px;
     }
   }
