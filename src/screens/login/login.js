@@ -21,6 +21,7 @@ class Login extends Component {
       password: "",
       passwordRequired: "dispNone",
       validUser: "dispNone",
+      loggedIn: sessionStorage.getItem("access-token") == null ? false : true,
     };
   }
   loginHandler = () => {
@@ -36,15 +37,17 @@ class Login extends Component {
     }
     let correctUsername = "admin";
     let correctPassword = "admin";
+    let accessToken =
+      "IGQVJVVVdoMVlTcnBSaE9fdDNBckR5MGItUWRSWF9Lam95OXBjNUVZAdF81cU1yeFhRbVZAqY18yOF9FZAmZAKVi1jUVRuT0cwb1hvV05GbV8xOFFRdEhRMXFKNEJSQnJZARF95UDd6RWRiOXR4Y3UyMkJVVQZDZD";
+    var userId = "17871426962322029";
     if (
       this.state.username === correctUsername &&
       this.state.password === correctPassword
     ) {
-      sessionStorage.setItem(
-        "access-token",
-        "IGQVJWajdlY19ZAUGttRk5sLWFIT1k0U0FTb1NzUmFsN0RqakdOeVpJdUVOZAW1oVWNVUDByMldMWmFUR3NvT2RxVnVFSDdGN0lfVHRVM0NNb2hOdkdRRmlYOUNoNld5U29EaGlleWhfakFTQ1o1OWN3Y3BVMVVrUWZAiNFdz"
-      );
       this.setState({ validUser: "dispNone" });
+      sessionStorage.setItem("access-token", accessToken);
+      sessionStorage.setItem("user-id", userId);
+      this.setState({ loggedIn: true });
 
       ReactDOM.render(<Home />, document.getElementById("root"));
     } else {
