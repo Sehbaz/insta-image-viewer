@@ -3,8 +3,7 @@ import { makeStyles } from "@material-ui/core/styles";
 import { withStyles } from "@material-ui/core/styles";
 import SearchIcon from "@material-ui/icons/Search";
 import "../header/header.css";
-import { ThreeSixtySharp } from "@material-ui/icons";
-
+import { IconButton } from "@material-ui/core";
 const { Component } = require("react");
 
 const useStyles = makeStyles((theme) => ({
@@ -25,9 +24,10 @@ class Header extends Component {
       userProfile: [],
     };
   }
-  componentDidMount() {
+  getUserProfile = () => {
     let accesstoken = sessionStorage.getItem("access-token");
     let userId = sessionStorage.getItem("user-id");
+    /*
     fetch(
       "https://graph.instagram.com/" +
         userId +
@@ -39,34 +39,47 @@ class Header extends Component {
         this.setState({
           userProfile: result,
         });
-
-        console.log(this.state.userProfile.media_url);
       });
-  }
+      */
+  };
+
   render() {
     return (
       <div className="header-container">
         <div className="container-item logo">Image Viewer</div>
-        {this.props.showSearchOption === "true" ? (
-          <div className="container-item ">
-            <div>
-              <form className="home-search">
-                <button>
-                  <SearchIcon />
-                </button>
-                <input type="text" placeholder="Search.." />
-              </form>
-            </div>
-            <div className="profile-img-container">
-              <img
-                className="profile-img"
-                src={this.state.userProfile.media_url}
-              ></img>
-            </div>
-          </div>
-        ) : (
-          ""
-        )}
+        {this.props.showSearchOption === "true"
+          ? (this.getUserProfile(),
+            (
+              <div className="container-item ">
+                <div>
+                  <form className="home-search">
+                    <button>
+                      <SearchIcon />
+                    </button>
+                    <input type="text" placeholder="Search.." />
+                  </form>
+                </div>
+
+                <div className="profile-img-container">
+                  <IconButton size="small">
+                    <h1>LOGO</h1>
+                    {/*
+                    {this.state.userProfile === "" ? (
+                      <h1>Hello</h1>
+                    ) : (
+                      
+                      <img
+                        className="profile-img"
+                        src={this.state.userProfile.media_url}
+                        alt="profile-image"
+                      />
+                  )}
+                    */}
+                  </IconButton>
+                </div>
+              </div>
+            ))
+          : ""}
       </div>
     );
   }
