@@ -12,13 +12,16 @@ class Home extends Component {
 
   componentDidMount() {
     let accesstoken = sessionStorage.getItem("access-token");
+    let userId = sessionStorage.getItem("user-id");
     console.log("Access Token : " + accesstoken);
+
     fetch(
       "https://graph.instagram.com/me/media?fields=id,caption&access_token=" +
         accesstoken
     )
       .then((res) => res.json())
       .then((result) => {
+        console.log(result);
         this.setState({
           posts: result.data,
         });

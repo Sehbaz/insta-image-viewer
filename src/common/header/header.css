@@ -7,6 +7,11 @@
 }
 .container-item{
     padding: 0px 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+   
 }
 .logo{
     color: #fff;
@@ -31,6 +36,15 @@
 .home-search input:focus {
     outline:none;
   }
+  .profile-img-container{
+      padding-left: 20px;
+  }
+  .profile-img{
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      
+  }
 /* Style the search box inside the navigation bar 
 .home-search input[type=text] {
     float: right;
@@ -48,11 +62,16 @@
 @media (max-width: 700px) {
     .header-container {
         max-height: 50px;
+        padding: 5px;
     }
     .container-item{
         padding: 0px 20px;
     }
-    .home-search input[type=text] {
-        width: 130px;
+    .home-search  {
+        width: 150px;
     }
+    .profile-img-container{
+        padding-left: 10px;
+    }
+   
   }
