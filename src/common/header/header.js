@@ -22,16 +22,20 @@ class Header extends Component {
     return (
       <div className="header-container">
         <div className="container-item logo">Image Viewer</div>
-        <div className="container-item ">
-          <div>
-            <form className="home-search">
-              <button>
-                <SearchIcon />
-              </button>
-              <input type="text" placeholder="Search.." />
-            </form>
+        {this.props.showSearchOption === "true" ? (
+          <div className="container-item ">
+            <div>
+              <form className="home-search">
+                <button>
+                  <SearchIcon />
+                </button>
+                <input type="text" placeholder="Search.." />
+              </form>
+            </div>
           </div>
-        </div>
+        ) : (
+          ""
+        )}
       </div>
     );
   }
