@@ -8,6 +8,8 @@ import CardContent from "@material-ui/core/CardContent";
 import InputLabel from "@material-ui/core/InputLabel";
 import Input from "@material-ui/core/Input";
 import { FormHelperText } from "@material-ui/core/";
+import Home from "../home/Home";
+import ReactDOM from "react-dom";
 const { Component } = require("react");
 
 class Login extends Component {
@@ -43,13 +45,12 @@ class Login extends Component {
         "IGQVJWajdlY19ZAUGttRk5sLWFIT1k0U0FTb1NzUmFsN0RqakdOeVpJdUVOZAW1oVWNVUDByMldMWmFUR3NvT2RxVnVFSDdGN0lfVHRVM0NNb2hOdkdRRmlYOUNoNld5U29EaGlleWhfakFTQ1o1OWN3Y3BVMVVrUWZAiNFdz"
       );
       this.setState({ validUser: "dispNone" });
-      console.log("Correct credetntials");
-      // ReactDOM.render(<Home />, document.getElementById("root"));
+
+      ReactDOM.render(<Home />, document.getElementById("root"));
     } else {
       this.state.username !== "" && this.state.password !== ""
         ? this.setState({ validUser: "dispBlock" })
         : this.setState({ validUser: "dispNone" });
-      console.log("INcorrect credetntials");
     }
   };
   inputUsernameChangeHandler = (e) => {
