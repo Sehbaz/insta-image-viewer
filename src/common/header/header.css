@@ -14,8 +14,24 @@
 }
 .home-search{
     display: flex;
+    border-radius: 4px;
+    width:300px;
+    height: 40px;
 }
-/* Style the search box inside the navigation bar */
+.home-search button,input{
+    background-color: #c0c0c0;
+    border: none;
+    border-radius: 4px;
+}
+.home-search input[type=text] {
+    font-size: 17px;
+    margin-left: -5px;
+    width: 100%;
+}
+.home-search input:focus {
+    outline:none;
+  }
+/* Style the search box inside the navigation bar 
 .home-search input[type=text] {
     float: right;
     padding: 6px;
@@ -27,9 +43,8 @@
     background-color: #c0c0c0;
     color:black;
   }
-  .home-search input:focus {
-    outline:none;
-  }
+  
+  */
 @media (max-width: 700px) {
     .header-container {
         max-height: 50px;

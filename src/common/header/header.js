@@ -1,7 +1,7 @@
 import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import { withStyles } from "@material-ui/core/styles";
-import TextField from "@material-ui/core/TextField";
+import SearchIcon from "@material-ui/icons/Search";
 import "../header/header.css";
 
 const { Component } = require("react");
@@ -22,11 +22,15 @@ class Header extends Component {
     return (
       <div className="header-container">
         <div className="container-item logo">Image Viewer</div>
-        <div className="container-item home-search">
+        <div className="container-item ">
           <div>
-            <input type="text" placeholder="Search.." />
+            <form className="home-search">
+              <button>
+                <SearchIcon />
+              </button>
+              <input type="text" placeholder="Search.." />
+            </form>
           </div>
-          <div>Profile Logo</div>
         </div>
       </div>
     );
