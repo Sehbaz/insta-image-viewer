@@ -44,26 +44,6 @@ class Home extends Component {
         });
       });
   }
-  getPostDetails = (e) => {
-    let accesstoken = sessionStorage.getItem("access-token");
-    let userId = sessionStorage.getItem("user-id");
-
-    console.log("Access Token :" + accesstoken);
-    console.log("userId :" + userId);
-    let imgUrl = [];
-    fetch(
-      "https://graph.instagram.com/" +
-        userId +
-        "?fields=id,media_type,media_url,username,timestamp&access_token=" +
-        accesstoken
-    )
-      .then((res1) => res1.json())
-      .then((result) => {
-        imgUrl = result.data;
-      });
-
-    return imgUrl;
-  };
 
   render() {
     return (
