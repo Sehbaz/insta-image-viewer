@@ -17,6 +17,7 @@ class PostCards extends Component {
       grey: true,
       likeCount: 0,
       postsData: [],
+      timestamp: "",
     };
   }
   componentDidMount() {
@@ -60,7 +61,19 @@ class PostCards extends Component {
             <CardHeader
               avatar={<Avatar aria-label="recipe">UG</Avatar>}
               title={this.state.postsData.username}
-              subheader={this.state.postsData.timestamp}
+              subheader={
+                new Date(this.state.postsData.timestamp).getDate() +
+                "/" +
+                (new Date(this.state.postsData.timestamp).getMonth() + 1) +
+                "/" +
+                new Date(this.state.postsData.timestamp).getFullYear() +
+                " " +
+                new Date(this.state.postsData.timestamp).getHours() +
+                ":" +
+                new Date(this.state.postsData.timestamp).getMinutes() +
+                ":" +
+                new Date(this.state.postsData.timestamp).getSeconds()
+              }
             ></CardHeader>
 
             <CardMedia>
