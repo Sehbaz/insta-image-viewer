@@ -28,64 +28,64 @@ class Profile extends Component {
     return (
       <div>
         <Header showSearchOption="false" showProfileOption="true" />
-        <div class="container">
-          <div class="profile">
-            <div class="profile-image">
+        <div className="container">
+          <div className="profile">
+            <div className="profile-image">
               <img src={userImage} alt="" />
             </div>
 
-            <div class="profile-user-settings">
-              <h1 class="profile-user-name">{this.state.posts}</h1>
+            <div className="profile-user-settings">
+              <h1 className="profile-user-name">{this.state.posts}</h1>
 
               <button
-                class="btn profile-settings-btn"
+                className="btn profile-settings-btn"
                 aria-label="profile settings"
               >
-                <i class="fas fa-cog" aria-hidden="true"></i>
+                <i className="fas fa-cog" aria-hidden="true"></i>
               </button>
             </div>
 
-            <div class="profile-stats">
+            <div className="profile-stats">
               <ul>
                 <li>
-                  <span class="profile-stat-count">post: </span> 10
+                  <span className="profile-stat-count">post: </span> 10
                 </li>
                 <li>
-                  <span class="profile-stat-count">followers :</span> 200
+                  <span className="profile-stat-count">followers :</span> 200
                 </li>
                 <li>
-                  <span class="profile-stat-count">following :</span> 299
+                  <span className="profile-stat-count">following :</span> 299
                 </li>
               </ul>
             </div>
 
-            <div class="profile-bio">
+            <div className="profile-bio">
               <p>
-                <span class="profile-real-name">Jane Doe</span>{" "}
-                <button class="btn profile-edit-btn">Edit Profile</button>
+                <span className="profile-real-name">Jane Doe</span>{" "}
+                <button className="btn profile-edit-btn">Edit Profile</button>
               </p>
             </div>
           </div>
         </div>
-        <div class="container">
-          <div class="gallery">
-            <div class="gallery-item" tabindex="0">
-              <img src={userImage} class="gallery-image" alt="" />
+        <div className="container">
+          <div className="gallery">
+            <div className="gallery-item" tabIndex="0">
+              <img src={userImage} className="gallery-image" alt="" />
             </div>
-            <div class="gallery-item" tabindex="0">
-              <img src={userImage} class="gallery-image" alt="" />
+            <div className="gallery-item" tabIndex="0">
+              <img src={userImage} className="gallery-image" alt="" />
             </div>
-            <div class="gallery-item" tabindex="0">
-              <img src={userImage} class="gallery-image" alt="" />
+            <div className="gallery-item" tabIndex="0">
+              <img src={userImage} className="gallery-image" alt="" />
             </div>
-            <div class="gallery-item" tabindex="0">
-              <img src={userImage} class="gallery-image" alt="" />
+            <div className="gallery-item" tabIndex="0">
+              <img src={userImage} className="gallery-image" alt="" />
             </div>
-            <div class="gallery-item" tabindex="0">
-              <img src={userImage} class="gallery-image" alt="" />
+            <div className="gallery-item" tabIndex="0">
+              <img src={userImage} className="gallery-image" alt="" />
             </div>
-            <div class="gallery-item" tabindex="0">
-              <img src={userImage} class="gallery-image" alt="" />
+            <div className="gallery-item" tabIndex="0">
+              <img src={userImage} className="gallery-image" alt="" />
             </div>
           </div>
         </div>
