@@ -4,6 +4,7 @@ import { withStyles } from "@material-ui/core/styles";
 import SearchIcon from "@material-ui/icons/Search";
 import "../header/header.css";
 import { IconButton } from "@material-ui/core";
+import userImage from "../../assets/userIcon.png";
 const { Component } = require("react");
 
 const useStyles = makeStyles((theme) => ({
@@ -62,7 +63,7 @@ class Header extends Component {
 
                 <div className="profile-img-container">
                   <IconButton size="small">
-                    <h1>LOGO</h1>
+                    <img src={userImage} className="profile-img"></img>
                     {/*
                     {this.state.userProfile === "" ? (
                       <h1>Hello</h1>

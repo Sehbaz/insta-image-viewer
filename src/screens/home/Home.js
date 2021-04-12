@@ -3,6 +3,7 @@ import React from "react";
 import Header from "../../common/header/header";
 import "../home/Home.css";
 import Posts from "../allposts/Posts";
+import Avatar from "@material-ui/core/Avatar";
 const styles = (theme) => ({
   root: {
     minWidth: 275,
