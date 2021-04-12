@@ -9,9 +9,8 @@
     padding: 0px 30px;
     display: flex;
     justify-content: center;
-    align-items: center;
-    
    
+    align-items: center;
 }
 .logo{
     color: #fff;
@@ -38,6 +37,8 @@
   }
   .profile-img-container{
       padding-left: 20px;
+      
+      justify-content: flex-end;
   }
   .profile-img{
       width: 40px;
@@ -45,20 +46,7 @@
       border-radius: 50%;
       
   }
-/* Style the search box inside the navigation bar 
-.home-search input[type=text] {
-    float: right;
-    padding: 6px;
-    border: none;
-    border-radius: 4px;
-    margin-right: 16px;
-    font-size: 17px;
-    width:300px;
-    background-color: #c0c0c0;
-    color:black;
-  }
-  
-  */
+
 @media (max-width: 700px) {
     .header-container {
         max-height: 50px;

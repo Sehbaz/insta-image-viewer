@@ -50,42 +50,48 @@ class Header extends Component {
     return (
       <div className="header-container">
         <div className="container-item logo">Image Viewer</div>
-        {this.props.showSearchOption === "true" ? (
-          <div className="container-item ">
+        <div className="container-item ">
+          <div>
+            {this.props.showSearchOption === "true" ? (
+              <div>
+                <div>
+                  <form className="home-search">
+                    <button>
+                      <SearchIcon />
+                    </button>
+                    <input type="text" placeholder="Search.." />
+                  </form>
+                </div>
+              </div>
+            ) : (
+              ""
+            )}
+          </div>
+          <div>
+            <div className="profile-img-container">
+              <IconButton
+                size="small"
+                aria-controls="simple-menu"
+                aria-haspopup="true"
+                onClick={this.handleClick}
+              >
+                <img src={userImage} className="profile-img"></img>
+              </IconButton>
+            </div>
             <div>
-              <form className="home-search">
-                <button>
-                  <SearchIcon />
-                </button>
-                <input type="text" placeholder="Search.." />
-              </form>
+              <Menu
+                id="simple-menu"
+                anchorEl={this.state.anchorEl}
+                keepMounted
+                open={Boolean(this.state.anchorEl)}
+                onClose={this.handleClose}
+              >
+                <MenuItem onClick={this.onClickProfile}>My account</MenuItem>
+
+                <MenuItem onClick={this.onClickLogout}>Logout</MenuItem>
+              </Menu>
             </div>
           </div>
-        ) : (
-          ""
-        )}
-        <div className="profile-img-container">
-          <IconButton
-            size="small"
-            aria-controls="simple-menu"
-            aria-haspopup="true"
-            onClick={this.handleClick}
-          >
-            <img src={userImage} className="profile-img"></img>
-          </IconButton>
-        </div>
-        <div>
-          <Menu
-            id="simple-menu"
-            anchorEl={this.state.anchorEl}
-            keepMounted
-            open={Boolean(this.state.anchorEl)}
-            onClose={this.handleClose}
-          >
-            <MenuItem onClick={this.onClickProfile}>My account</MenuItem>
-
-            <MenuItem onClick={this.onClickLogout}>Logout</MenuItem>
-          </Menu>
         </div>
       </div>
     );
