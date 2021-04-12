@@ -19,7 +19,26 @@ class PostCards extends Component {
     this.state = {
       grey: true,
       likeCount: 0,
+      postsData: [],
     };
+  }
+  componentDidMount() {
+    let accesstoken = sessionStorage.getItem("access-token");
+    let userId = this.props.postData;
+
+    fetch(
+      "https://graph.instagram.com/" +
+        userId +
+        "?fields=id,media_type,media_url,username,timestamp&access_token=" +
+        accesstoken
+    )
+      .then((res) => res.json())
+      .then((result) => {
+        console.log(result);
+        this.setState({
+          postsData: result,
+        });
+      });
   }
   changeColor() {
     this.setState({ grey: !this.state.grey });
@@ -36,11 +55,16 @@ class PostCards extends Component {
         <Card>
           <CardHeader
             avatar={<Avatar aria-label="recipe">UG</Avatar>}
-            title="Username"
-            subheader="September 14, 2016"
+            title={this.state.postsData.username}
+            subheader={this.state.postsData.timestamp}
           ></CardHeader>
 
-          <CardMedia>Image</CardMedia>
+          <CardMedia>
+            <img
+              src={this.state.postsData.media_url}
+              className="post-img"
+            ></img>
+          </CardMedia>
           <CardActions>
             <FavoriteIcon
               className={btn_class}

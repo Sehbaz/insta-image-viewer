@@ -38,6 +38,7 @@ class Home extends Component {
     )
       .then((res) => res.json())
       .then((result) => {
+        console.log(result);
         this.setState({
           posts: result.data,
         });
@@ -68,8 +69,12 @@ class Home extends Component {
     return (
       <div>
         <Header showSearchOption="true" />
-        Hi from the home page
-        <Posts />
+        <div className="all-post-container">
+          {this.state.posts.map((post) => (
+            <Posts key={post.id} data={post.id} />
+          ))}
+        </div>
+
         {/*
         <div>
           {this.state.posts.map((post) => (

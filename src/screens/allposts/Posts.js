@@ -6,16 +6,13 @@ import "../allposts/Posts.css";
 
 class Posts extends Component {
   render() {
+    console.log("Posts :" + this.props.data);
     return (
       <div className="all-post-container">
         <div className="post-container">
-          <PostCards />
-        </div>
-        <div className="post-container">
-          <PostCards />
-        </div>
-        <div className="post-container">
-          <PostCards />
+          <div className="post">
+            <PostCards postData={this.props.data} />
+          </div>
         </div>
       </div>
     );
