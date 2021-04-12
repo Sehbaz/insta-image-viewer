@@ -32,6 +32,7 @@ class Header extends Component {
       anchorEl: null,
     };
   }
+
   handleClick = (event) => {
     this.setState({ anchorEl: event.currentTarget });
   };
@@ -47,6 +48,7 @@ class Header extends Component {
     ReactDOM.render(<Profile />, document.getElementById("root"));
   };
   render() {
+    console.log("Data from header" + this.props.data);
     return (
       <div className="header-container">
         <div className="container-item logo">Image Viewer</div>

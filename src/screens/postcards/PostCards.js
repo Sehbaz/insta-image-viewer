@@ -50,37 +50,46 @@ class PostCards extends Component {
   }
   render() {
     let btn_class = this.state.grey ? "greyButton" : "redButton";
+
     return (
       <div>
-        <Card>
-          <CardHeader
-            avatar={<Avatar aria-label="recipe">UG</Avatar>}
-            title={this.state.postsData.username}
-            subheader={this.state.postsData.timestamp}
-          ></CardHeader>
+        {this.props.profileModeData === "true" ? (
+          <img src={this.state.postsData.media_url} className="post-img"></img>
+        ) : (
+          <Card>
+            <CardHeader
+              avatar={<Avatar aria-label="recipe">UG</Avatar>}
+              title={this.state.postsData.username}
+              subheader={this.state.postsData.timestamp}
+            ></CardHeader>
 
-          <CardMedia>
-            <img
-              src={this.state.postsData.media_url}
-              className="post-img"
-            ></img>
-          </CardMedia>
-          <CardActions>
-            <FavoriteIcon
-              className={btn_class}
-              onClick={this.changeColor.bind(this)}
-            />
-            <span>{this.state.likeCount} likes</span>
-          </CardActions>
-          <div className="comment-section">
-            <form className="comment-form">
-              <TextField id="standard-basic" label="Add a Comment" fullWidth />
-              <Button variant="contained" color="primary">
-                ADD
-              </Button>
-            </form>
-          </div>
-        </Card>
+            <CardMedia>
+              <img
+                src={this.state.postsData.media_url}
+                className="post-img"
+              ></img>
+            </CardMedia>
+            <CardActions>
+              <FavoriteIcon
+                className={btn_class}
+                onClick={this.changeColor.bind(this)}
+              />
+              <span>{this.state.likeCount} likes</span>
+            </CardActions>
+            <div className="comment-section">
+              <form className="comment-form">
+                <TextField
+                  id="standard-basic"
+                  label="Add a Comment"
+                  fullWidth
+                />
+                <Button variant="contained" color="primary">
+                  ADD
+                </Button>
+              </form>
+            </div>
+          </Card>
+        )}
       </div>
     );
   }

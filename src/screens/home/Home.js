@@ -48,7 +48,7 @@ class Home extends Component {
   render() {
     return (
       <div>
-        <Header showSearchOption="true" />
+        <Header showSearchOption="true" headerData={this.state.posts.id} />
         <div className="all-post-container">
           {this.state.posts.map((post) => (
             <Posts key={post.id} data={post.id} />

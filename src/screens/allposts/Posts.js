@@ -6,12 +6,16 @@ import "../allposts/Posts.css";
 
 class Posts extends Component {
   render() {
-    console.log("Posts :" + this.props.data);
+    console.log();
+
     return (
       <div className="all-post-container">
         <div className="post-container">
           <div className="post">
-            <PostCards postData={this.props.data} />
+            <PostCards
+              postData={this.props.data}
+              profileModeData={this.props.profileMode}
+            />
           </div>
         </div>
       </div>
