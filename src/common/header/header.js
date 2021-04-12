@@ -68,29 +68,38 @@ class Header extends Component {
             )}
           </div>
           <div>
-            <div className="profile-img-container">
-              <IconButton
-                size="small"
-                aria-controls="simple-menu"
-                aria-haspopup="true"
-                onClick={this.handleClick}
-              >
-                <img src={userImage} className="profile-img"></img>
-              </IconButton>
-            </div>
-            <div>
-              <Menu
-                id="simple-menu"
-                anchorEl={this.state.anchorEl}
-                keepMounted
-                open={Boolean(this.state.anchorEl)}
-                onClose={this.handleClose}
-              >
-                <MenuItem onClick={this.onClickProfile}>My account</MenuItem>
+            {this.props.showSearchOption === "true" ||
+            this.props.showProfileOption === "true" ? (
+              <div>
+                <div className="profile-img-container">
+                  <IconButton
+                    size="small"
+                    aria-controls="simple-menu"
+                    aria-haspopup="true"
+                    onClick={this.handleClick}
+                  >
+                    <img src={userImage} className="profile-img"></img>
+                  </IconButton>
+                </div>
+                <div>
+                  <Menu
+                    id="simple-menu"
+                    anchorEl={this.state.anchorEl}
+                    keepMounted
+                    open={Boolean(this.state.anchorEl)}
+                    onClose={this.handleClose}
+                  >
+                    <MenuItem onClick={this.onClickProfile}>
+                      My account
+                    </MenuItem>
 
-                <MenuItem onClick={this.onClickLogout}>Logout</MenuItem>
-              </Menu>
-            </div>
+                    <MenuItem onClick={this.onClickLogout}>Logout</MenuItem>
+                  </Menu>
+                </div>
+              </div>
+            ) : (
+              <div></div>
+            )}
           </div>
         </div>
       </div>

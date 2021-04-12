@@ -4,7 +4,7 @@ class Profile extends Component {
   render() {
     return (
       <div>
-        <Header showSearchOption="false" />
+        <Header showSearchOption="false" showProfileOption="true" />
         HI from Profile
       </div>
     );
