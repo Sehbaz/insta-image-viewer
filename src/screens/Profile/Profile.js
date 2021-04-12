@@ -5,7 +5,7 @@ class Profile extends Component {
     return (
       <div>
         <Header showSearchOption="false" showProfileOption="true" />
-        HI from Profile
+        Hi from Profile
       </div>
     );
   }

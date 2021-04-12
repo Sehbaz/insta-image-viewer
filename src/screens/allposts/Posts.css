@@ -1,10 +1,11 @@
 .post{
     width:40vw;
-    margin: 10px;;
+    margin: 10px;
+   
 }
 
 @media (max-width: 700px) {
     .post{
-        width: 60vw;
+        width: 80vw;
     }
 }
