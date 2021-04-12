@@ -6,8 +6,6 @@ import "../allposts/Posts.css";
 
 class Posts extends Component {
   render() {
-    console.log();
-
     return (
       <div className="all-post-container">
         <div className="post-container">

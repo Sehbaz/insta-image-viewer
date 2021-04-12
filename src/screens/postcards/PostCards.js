@@ -4,11 +4,8 @@ import "../postcards/PostCards.css";
 import Card from "@material-ui/core/Card";
 import CardHeader from "@material-ui/core/CardHeader";
 import CardMedia from "@material-ui/core/CardMedia";
-import CardContent from "@material-ui/core/CardContent";
 import CardActions from "@material-ui/core/CardActions";
 import Avatar from "@material-ui/core/Avatar";
-import IconButton from "@material-ui/core/IconButton";
-import { red } from "@material-ui/core/colors";
 import FavoriteIcon from "@material-ui/icons/Favorite";
 import { Button, TextField } from "@material-ui/core";
 
@@ -34,7 +31,6 @@ class PostCards extends Component {
     )
       .then((res) => res.json())
       .then((result) => {
-        console.log(result);
         this.setState({
           postsData: result,
         });
@@ -54,7 +50,11 @@ class PostCards extends Component {
     return (
       <div>
         {this.props.profileModeData === "true" ? (
-          <img src={this.state.postsData.media_url} className="post-img"></img>
+          <img
+            src={this.state.postsData.media_url}
+            className="post-img"
+            alt=""
+          ></img>
         ) : (
           <Card>
             <CardHeader
@@ -67,6 +67,7 @@ class PostCards extends Component {
               <img
                 src={this.state.postsData.media_url}
                 className="post-img"
+                alt=""
               ></img>
             </CardMedia>
             <CardActions>

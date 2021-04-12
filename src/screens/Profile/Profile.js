@@ -2,11 +2,6 @@ import React, { Component } from "react";
 import Header from "../../common/header/header";
 import "../Profile/Profile.css";
 import userImage from "../../assets/userIcon.png";
-import Posts from "../allposts/Posts";
-import { makeStyles } from "@material-ui/core/styles";
-import { withStyles } from "@material-ui/core/styles";
-import Grid from "@material-ui/core/Grid";
-import Paper from "@material-ui/core/Paper";
 
 class Profile extends Component {
   constructor() {

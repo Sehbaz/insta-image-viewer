@@ -48,7 +48,6 @@ class Header extends Component {
     ReactDOM.render(<Profile />, document.getElementById("root"));
   };
   render() {
-    console.log("Data from header" + this.props.data);
     return (
       <div className="header-container">
         <div className="container-item logo">Image Viewer</div>
@@ -80,7 +79,7 @@ class Header extends Component {
                     aria-haspopup="true"
                     onClick={this.handleClick}
                   >
-                    <img src={userImage} className="profile-img"></img>
+                    <img src={userImage} className="profile-img" alt="" />
                   </IconButton>
                 </div>
                 <div>

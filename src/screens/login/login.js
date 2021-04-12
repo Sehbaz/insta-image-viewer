@@ -39,14 +39,14 @@ class Login extends Component {
     let correctPassword = "admin";
     let accessToken =
       "IGQVJYaXBuNkJYQ2ZA4OFRnV0ZANWk5pc3N1ODZA4b1l1eHpSTWxaNTFOTDY0VnFRYXRJZAVduNDhPWjlrXzV3RWVpQlRCYTRHS1RxQWdwQW5oeDNDbGZA3NV9DUXZAVYUxwaTBfZA2ZAmRmVlVHMtdm55ei0zUQZDZD";
-    var userId = "17871426962322029";
+
     if (
       this.state.username === correctUsername &&
       this.state.password === correctPassword
     ) {
       this.setState({ validUser: "dispNone" });
       sessionStorage.setItem("access-token", accessToken);
-      sessionStorage.setItem("user-id", userId);
+
       this.setState({ loggedIn: true });
 
       ReactDOM.render(<Home />, document.getElementById("root"));
