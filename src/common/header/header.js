@@ -10,6 +10,7 @@ import Menu from "@material-ui/core/Menu";
 import MenuItem from "@material-ui/core/MenuItem";
 
 import ReactDOM from "react-dom";
+import Profile from "../../screens/Profile/Profile";
 const { Component } = require("react");
 
 const useStyles = makeStyles((theme) => ({
@@ -42,6 +43,9 @@ class Header extends Component {
     sessionStorage.removeItem("access-token");
     ReactDOM.render(<Login />, document.getElementById("root"));
   };
+  onClickProfile = () => {
+    ReactDOM.render(<Profile />, document.getElementById("root"));
+  };
   render() {
     return (
       <div className="header-container">
@@ -56,35 +60,33 @@ class Header extends Component {
                 <input type="text" placeholder="Search.." />
               </form>
             </div>
-
-            <div className="profile-img-container">
-              <IconButton
-                size="small"
-                aria-controls="simple-menu"
-                aria-haspopup="true"
-                onClick={this.handleClick}
-              >
-                <img src={userImage} className="profile-img"></img>
-              </IconButton>
-            </div>
-
-            <div>
-              <Menu
-                id="simple-menu"
-                anchorEl={this.state.anchorEl}
-                keepMounted
-                open={Boolean(this.state.anchorEl)}
-                onClose={this.handleClose}
-              >
-                <MenuItem>My account</MenuItem>
-
-                <MenuItem onClick={this.onClickLogout}>Logout</MenuItem>
-              </Menu>
-            </div>
           </div>
         ) : (
           ""
         )}
+        <div className="profile-img-container">
+          <IconButton
+            size="small"
+            aria-controls="simple-menu"
+            aria-haspopup="true"
+            onClick={this.handleClick}
+          >
+            <img src={userImage} className="profile-img"></img>
+          </IconButton>
+        </div>
+        <div>
+          <Menu
+            id="simple-menu"
+            anchorEl={this.state.anchorEl}
+            keepMounted
+            open={Boolean(this.state.anchorEl)}
+            onClose={this.handleClose}
+          >
+            <MenuItem onClick={this.onClickProfile}>My account</MenuItem>
+
+            <MenuItem onClick={this.onClickLogout}>Logout</MenuItem>
+          </Menu>
+        </div>
       </div>
     );
   }
